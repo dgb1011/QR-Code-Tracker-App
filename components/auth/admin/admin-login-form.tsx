@@ -88,7 +88,7 @@ export function AdminLoginForm() {
             {isLoading ? 'Signing in...' : 'Sign In'}
           </Button>
           <div className="text-center text-sm text-muted-foreground">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <a href="/admin/signup" className="text-primary hover:underline font-medium">
               Sign up
             </a>
