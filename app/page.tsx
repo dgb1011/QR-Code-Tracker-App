@@ -1,23 +1,42 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { QrCode, Users, BarChart } from "lucide-react";
 
 export default function LandingPage() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      <header className="px-4 lg:px-6 h-14 flex items-center animate-fade-in-down">
-        <Link href="#" className="flex items-center justify-center">
-          <QrCode className="h-6 w-6 text-primary" />
-          <span className="sr-only">QR Event Tracker</span>
-        </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link href="/admin/login" className="text-sm font-medium hover:underline underline-offset-4">Login</Link>
-          <Link href="/admin/signup" className="text-sm font-medium hover:underline underline-offset-4">Sign Up</Link>
-        </nav>
+    <div className="flex flex-col min-h-screen bg-background">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'border-b bg-background/80 backdrop-blur-lg' : 'bg-transparent'}`}>
+        <div className="container mx-auto px-4 lg:px-6 h-16 flex items-center">
+            <Link href="#" className="flex items-center justify-center">
+              <QrCode className="h-6 w-6 text-primary" />
+              <span className="ml-2 font-semibold text-lg">QR Event Tracker</span>
+            </Link>
+            <nav className="ml-auto flex items-center gap-4 sm:gap-6">
+              <Link href="/admin/login">
+                <Button variant="outline">Login</Button>
+              </Link>
+              <Link href="/admin/signup">
+                <Button>Sign Up</Button>
+              </Link>
+            </nav>
+        </div>
       </header>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-br from-orange-50 via-white to-purple-50 overflow-hidden">
+        <section className="w-full pt-24 md:pt-32 lg:pt-40 xl:pt-56 bg-gradient-to-br from-orange-50 via-background to-purple-50 overflow-hidden">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4 animate-fade-in-up">

@@ -45,31 +45,31 @@
 :root {
   --radius: 0.625rem;
   
-  /* Nexis Solutions inspired colors - Whites, Oranges, Purples */
-  --background: oklch(1 0 0); /* White background */
-  --foreground: oklch(0.205 0 0); /* Dark text */
+  /* Nexis Solutions inspired colors - Enhanced Palette */
+  --background: oklch(0.98 0 0); /* Off-White */
+  --foreground: oklch(0.36 0.03 180); /* Dark Slate Gray */
   
   --card: oklch(1 0 0); /* White cards */
-  --card-foreground: oklch(0.205 0 0);
+  --card-foreground: oklch(0.36 0.03 180);
   
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.36 0.03 180);
   
   /* Orange Primary - #FF6B35 converted to oklch */
   --primary: oklch(0.68 0.18 32); /* Orange for CTA buttons */
   --primary-foreground: oklch(1 0 0); /* White text on orange */
   
-  /* Purple Secondary - #8B5CF6 converted to oklch */
-  --secondary: oklch(0.58 0.22 290); /* Purple for secondary actions */
+  /* Deep Indigo Secondary - #4B0082 converted to oklch */
+  --secondary: oklch(0.33 0.22 290); /* Deep Indigo for secondary actions */
   --secondary-foreground: oklch(1 0 0); /* White text on purple */
   
   /* Light backgrounds */
   --muted: oklch(0.97 0 0); /* Very light gray */
   --muted-foreground: oklch(0.5 0 0); /* Mid gray text */
   
-  /* Orange light accent - #FFE4D6 */
-  --accent: oklch(0.93 0.05 32); /* Light orange background */
-  --accent-foreground: oklch(0.205 0 0);
+  /* Soft Peach Accent - #FFDAB9 */
+  --accent: oklch(0.89 0.05 45); /* Soft Peach background */
+  --accent-foreground: oklch(0.36 0.03 180);
   
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
